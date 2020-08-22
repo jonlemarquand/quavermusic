@@ -1,0 +1,1 @@
+This project was built with React, Laravel and Postgres as a way of seeing what I've listened to.
