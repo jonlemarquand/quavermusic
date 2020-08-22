@@ -1,0 +1,31 @@
+@import '../../shared/_styles.scss';
+
+.result-img {
+    background: $quaverPink;
+    height: 175px;
+    width: 175px;
+    border-radius: 50%;
+}
+
+.artist-title {
+    color: $quaverBlue;
+    font-weight: 700;
+}
+
+.item-title {
+    color: $quaverWhite;
+    font-weight: 800;
+    height: 38px;
+}
+
+.artist-title, .item-title {
+    margin-top: 10px;
+}
+
+.result {
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

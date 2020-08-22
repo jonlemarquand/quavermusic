@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Footer from './containers/Footer/Footer';
+import Header from './containers/Header/Header';
+import Home from './containers/Home/Home';
+
 import './App.scss';
 
-import logo from './assets/logo1000.png';
-
 function App() {
+
   return (
     <div className="App">
-    <header>
-      <img src={logo} className="logo-header" alt="Quaver Music"/>
-      <p className="subtitle">What have you been listening to?</p>
-    </header>
-    <footer>
-    <img src={logo} className="logo-footer" alt="Quaver Music"/>
-    <div className="footer-content">
-      About | Contact
-    </div>
-    </footer>
+    <Header />
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+    <Footer />
     </div>
   );
 }
