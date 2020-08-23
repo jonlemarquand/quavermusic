@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Result.scss';
 
-const Result = ({ Artist, Album }) => {
+const Result = ({ Artist, Album, Plays }) => {
     
     const TheAlbum = () => {
         if (Album) {
@@ -24,11 +24,23 @@ const Result = ({ Artist, Album }) => {
         );
     }
 
+    const PlayCount = () => {
+        if (!Plays) {
+            return (
+                <div className="playCount">0 Plays</div>
+            )
+        }
+        return (
+            <div className="playCount">{ Plays } Plays</div>
+        )
+    }
+
     return (
         <div className="result">
             <div className="result-img"></div>
             <TheAlbum />
             <TheArtist />
+            <PlayCount />
         </div>
     )
 }
