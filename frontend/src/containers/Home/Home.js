@@ -8,7 +8,10 @@ const Home = () => {
     return (
         <div className="home">
         <div className="home-section">
-            <h2>Artists:</h2>
+            <div className="intro-text">
+                <h2>Artists:</h2>
+                <p>View All</p>
+            </div>
             <div className="item-row">
                 <Result Artist="Punch Brothers" />
                 <Result Artist="Avett Brothers"/>
@@ -16,10 +19,12 @@ const Home = () => {
                 <Result Artist="I'm With Her"/>
                 <Result Artist="Sarah Jarosz"/>
             </div>
-            <p>View More</p>
         </div>
         <div className="home-section">
-            <h2>Albums:</h2>
+            <div className="intro-text">
+                <h2>Albums:</h2>
+                <p>View All</p>
+            </div>
             <div className="item-row">
                 <Result Artist="Foo Fighters" Album="There is Nothing Left to Lose" Plays="50"/>
                 <Result Artist="Red Hot Chili Peppers" Album="Stadium Arcadium"/>
@@ -27,10 +32,12 @@ const Home = () => {
                 <Result />
                 <Result />
             </div>
-            <p>View More</p>
         </div>
         <div className="home-section">
-            <h2>Genres:</h2>
+            <div className="intro-text">
+                <h2>Genres:</h2>
+                <p>View All</p>
+            </div>
         </div>
         </div>
     )
