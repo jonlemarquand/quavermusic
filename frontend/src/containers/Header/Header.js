@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import './Header.scss';
 import logo from '../../assets/logo1000.png';
@@ -63,7 +64,9 @@ const Header = () => {
 
     return (
         <header>
+            <Link to="/">
             <img src={logo} className="logo-header" alt="Quaver Music"/>
+            </Link>
             <p className="subtitle">What have you been listening to?</p>
             <div className="timeFilter">
                 <div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Result from '../../components/Result/Result';
 
@@ -10,7 +11,7 @@ const Home = () => {
         <div className="home-section">
             <div className="intro-text">
                 <h2>Artists:</h2>
-                <p>View All</p>
+                <Link to="/artists">View All</Link>
             </div>
             <div className="item-row">
                 <Result Artist="Punch Brothers" />
@@ -23,7 +24,7 @@ const Home = () => {
         <div className="home-section">
             <div className="intro-text">
                 <h2>Albums:</h2>
-                <p>View All</p>
+                <Link to="/albums">View All</Link>
             </div>
             <div className="item-row">
                 <Result Artist="Foo Fighters" Album="There is Nothing Left to Lose" Plays="50"/>
@@ -36,7 +37,7 @@ const Home = () => {
         <div className="home-section">
             <div className="intro-text">
                 <h2>Genres:</h2>
-                <p>View All</p>
+                <Link to="/genres">View All</Link>
             </div>
         </div>
         </div>
