@@ -11,20 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('genres')->insert([
-            ['genre_name' => 'Rock'],
-            ['genre_name' => 'Pop'],
-            ['genre_name' => 'Country'],
-            ['genre_name' => 'Dance'],
-            ['genre_name' => 'Jazz']
-        ]);
-        DB::table('subgenres')->insert([
-            ['subgenre_name' => 'Pop-Rock', 'genre_id' => '1'],
-            ['subgenre_name' => 'Bebop', 'genre_id' => '5'],
-            ['subgenre_name' => 'House', 'genre_id' => '4'],
-            ['subgenre_name' => 'Techno', 'genre_id' => '4'],
-            ['subgenre_name' => 'Bluegrass', 'genre_id' => '3']
-        ]);
+        $this->call(GenreSeeder::class);
         DB::table('artists')->insert([
             ['artist_name' => 'Foo Fighters'],
             ['artist_name' => 'Taylor Swift'],
