@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import Result from '../../components/Result/Result';
 
 import './Home.scss';
+import Data from '../../dummy/data';
 
 const Home = () => {
+
+const ArtistRow = Data.map((artist) => 
+    <Result Artist={artist.artist} Slug={artist.slug} Plays={artist.plays} />
+)
     return (
         <div className="home">
         <div className="home-section">
@@ -14,11 +19,7 @@ const Home = () => {
                 <Link to="/artists">View All</Link>
             </div>
             <div className="item-row">
-                <Result Artist="Punch Brothers" />
-                <Result Artist="Avett Brothers"/>
-                <Result Artist="Foo Fighters"/>
-                <Result Artist="I'm With Her"/>
-                <Result Artist="Sarah Jarosz"/>
+                {ArtistRow}
             </div>
         </div>
         <div className="home-section">
@@ -29,7 +30,7 @@ const Home = () => {
             <div className="item-row">
                 <Result Artist="Foo Fighters" Album="There is Nothing Left to Lose" Plays="50"/>
                 <Result Artist="Red Hot Chili Peppers" Album="Stadium Arcadium"/>
-                <Result Artist="Lights" Album="Siberia"/>
+                <Result Artist="Lights" Album="Siberia" Slug="siberia"/>
                 <Result />
                 <Result />
             </div>

@@ -43,7 +43,7 @@ const Header = () => {
 
     const TimeButton = () => {
         return (
-            <button onClick={() => setShowMenu(true)}> v </button>
+            <button onClick={() => setShowMenu(true)}> &#9660; </button>
         )
     }
 
@@ -65,7 +65,7 @@ const Header = () => {
     return (
         <header>
             <Link to="/">
-            <img src={logo} className="logo-header" alt="Quaver Music"/>
+                <img src={logo} className="logo-header" alt="Quaver Music"/>
             </Link>
             <p className="subtitle">What have you been listening to?</p>
             <div className="timeFilter">

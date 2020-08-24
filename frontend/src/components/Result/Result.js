@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './Result.scss';
 
-const Result = ({ Artist, Album, Plays }) => {
+const Result = ({ Artist, Album, Plays, Slug }) => {
     
     const TheAlbum = () => {
         if (Album) {
@@ -35,12 +35,20 @@ const Result = ({ Artist, Album, Plays }) => {
         )
     }
 
+    const TheSlug = () => {
+        if (Album) {
+            return `/albums/${Slug}`
+        }
+        return `/artists/${Slug}`
+    }
     return (
         <div className="result">
+        <Link to={TheSlug}>
             <div className="result-img"></div>
             <TheAlbum />
             <TheArtist />
             <PlayCount />
+        </Link>
         </div>
     )
 }
