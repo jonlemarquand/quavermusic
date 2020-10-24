@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Result.scss';
 
-const Result = ({ Artist, Album, Plays, Slug }) => {
+const Result = ({ Artist, Album, Plays, Slug, Img }) => {
     
     const TheAlbum = () => {
         if (Album) {
@@ -41,10 +41,21 @@ const Result = ({ Artist, Album, Plays, Slug }) => {
         }
         return `/artists/${Slug}`
     }
+
+    const TheImage = () => {
+        if (Img && Album) {
+            return <img className="result-img" alt={Artist} src={require(`../../assets/images/albums/${Slug}.jpg`)} /> }
+        else if (Img) {
+            return <img className="result-img" alt={Artist} src={require(`../../assets/images/artists/${Slug}.jpg`)} />
+        } else {
+            return <img className="result-img" alt={Artist} src={require(`../../assets/images/artists/blank.jpg`)} />;
+        }
+    }
+
     return (
         <div className="result">
         <Link to={TheSlug}>
-            <div className="result-img"></div>
+            <TheImage />
             <TheAlbum />
             <TheArtist />
             <PlayCount />

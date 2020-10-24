@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 import Result from '../../components/Result/Result';
 
 import './Home.scss';
-import Data from '../../dummy/data';
+import { ArtistData, AlbumData } from '../../dummy/data';
 
 const Home = () => {
 
-const ArtistRow = Data.map((artist) => 
-    <Result Artist={artist.artist} Slug={artist.slug} Plays={artist.plays} />
+const ArtistRow = ArtistData.map((artist) => 
+    <Result Artist={artist.artist} Slug={artist.slug} Plays={artist.plays} Img={artist.img} />
+)
+
+const AlbumRow = AlbumData.map((album) => 
+    <Result Artist={album.artist} Album={album.album}Slug={album.slug} Plays={album.plays} Img={album.img} />
 )
     return (
         <div className="home">
@@ -28,11 +32,7 @@ const ArtistRow = Data.map((artist) =>
                 <Link to="/albums">View All</Link>
             </div>
             <div className="item-row">
-                <Result Artist="Foo Fighters" Album="There is Nothing Left to Lose" Plays="50"/>
-                <Result Artist="Red Hot Chili Peppers" Album="Stadium Arcadium"/>
-                <Result Artist="Lights" Album="Siberia" Slug="siberia"/>
-                <Result />
-                <Result />
+                {AlbumRow}
             </div>
         </div>
         <div className="home-section">
