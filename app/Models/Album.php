@@ -21,6 +21,7 @@ class Album extends Model
         'name',
         'album_cover',
         'artist_id',
+        'subgenre_id',
     ];
 
     public $timestamps = false;
@@ -39,5 +40,10 @@ class Album extends Model
     public function song(): HasMany
     {
         return $this->hasMany(Song::class);
+    }
+
+    public function subgenre(): BelongsTo
+    {
+        return $this->belongsTo(Subgenre::class);
     }
 }

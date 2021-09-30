@@ -18,6 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->string('name');
             $table->string('album_cover');
             $table->bigInteger('artist_id');
+            $table->bigInteger('subgenre_id');
         });
     }
 
