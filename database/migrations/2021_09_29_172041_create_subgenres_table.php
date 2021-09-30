@@ -16,6 +16,7 @@ class CreateSubgenresTable extends Migration
         Schema::create('subgenres', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->bigInteger('genre_id');
         });
     }
 

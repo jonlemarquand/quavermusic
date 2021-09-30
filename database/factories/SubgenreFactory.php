@@ -25,6 +25,7 @@ class SubgenreFactory extends Factory
 
         return [
             'name' => $name,
+            'genre_id' => rand(1,10),
         ];
     }
 }
