@@ -22,7 +22,7 @@ class AlbumFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
+            'name' => $this->faker->unique()->word(),
             'album_cover' => $this->faker->imageUrl(400,400),
             'artist_id' => rand(1, 10),
         ];
