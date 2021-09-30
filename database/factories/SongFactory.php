@@ -22,7 +22,8 @@ class SongFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->word(),
+            'album_id' => rand(1,10),
         ];
     }
 }

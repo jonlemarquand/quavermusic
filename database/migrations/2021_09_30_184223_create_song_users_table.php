@@ -18,6 +18,7 @@ class CreateSongUsersTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('song_id');
             $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
