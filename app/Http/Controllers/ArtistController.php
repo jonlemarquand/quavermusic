@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ArtistResource;
 use App\Models\Artist;
 use Illuminate\Http\Request;
 
@@ -41,12 +42,12 @@ class ArtistController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Artist  $artist
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return ArtistResource
      */
-    public function show(Artist $artist)
+    public function show($id): ArtistResource
     {
-        //
+        return new ArtistResource(Artist::findOrFail($id));
     }
 
     /**

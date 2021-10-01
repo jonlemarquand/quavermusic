@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Album extends Model
@@ -20,18 +21,17 @@ class Album extends Model
         'id',
         'name',
         'album_cover',
-        'artist_id',
         'subgenre_id',
     ];
 
     public $timestamps = false;
 
     /**
-     * @return BelongsTo
+     * @return BelongsToMany
      */
-    public function artist(): BelongsTo
+    public function artist(): BelongsToMany
     {
-        return $this->belongsTo(Artist::class);
+        return $this->belongsToMany(Artist::class);
     }
 
     /*
