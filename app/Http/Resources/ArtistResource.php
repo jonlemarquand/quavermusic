@@ -26,6 +26,13 @@ class ArtistResource extends JsonResource
                     'album_cover' => $album->album_cover,
                 ];
             }),
+            'songs' => $this->songs()->where('artist_id', $this->id)->get()->map(function ($song) {
+                return [
+                    'id' => $song->id,
+                    'name' => $song->name,
+                    'album' => $song->album->name,
+                ];
+            })
         ];
     }
 }

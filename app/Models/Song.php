@@ -27,7 +27,7 @@ class Song extends Model
     /*
      * @return BelongsToMany
      */
-    public function Artist(): BelongsToMany
+    public function artist(): BelongsToMany
     {
         return $this->belongsToMany(Artist::class);
     }
@@ -35,7 +35,7 @@ class Song extends Model
     /*
      * @return BelongsTo
      */
-    public function Album(): BelongsTo
+    public function album(): BelongsTo
     {
         return $this->belongsTo(Album::class);
     }
