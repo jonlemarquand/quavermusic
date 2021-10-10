@@ -12,8 +12,19 @@
   flex: 1;
 }
 
+.quaver-container {
+  justify-content: center !important;
+  position: relative;
+}
+
 .quaver-nav {
   background: #212121;
+  justify-content: center;
+}
+
+.quaver-menu-position {
+  position: absolute;
+  right: 0;
 }
 
 /*!

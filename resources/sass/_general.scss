@@ -9,6 +9,17 @@
     flex: 1;
 }
 
+.quaver-container {
+    justify-content: center !important;
+    position: relative;
+}
+
 .quaver-nav {
     background: $black;
+    justify-content: center;
+}
+
+.quaver-menu-position {
+    position: absolute;
+    right: 0;
 }
