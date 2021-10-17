@@ -16,7 +16,7 @@ class ArtistSong extends Model
      */
     protected $fillable = [
         'artist_id',
-        'album_id',
+        'song_id',
     ];
 
     public $timestamps = false;

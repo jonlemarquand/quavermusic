@@ -40,5 +40,12 @@ class Song extends Model
         return $this->belongsTo(Album::class);
     }
 
+    /*
+     * @return BelongsToMany
+     */
+    public function plays(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'song_users')->withPivot('id', 'created_at');
+    }
 
 }
