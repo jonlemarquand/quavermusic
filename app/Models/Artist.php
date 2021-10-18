@@ -45,7 +45,7 @@ class Artist extends Model
     /**
      * @return int
      */
-    public function plays(): int
+    public function getPlaysAttribute(): int
     {
         $songs = $this->songs()->where('artist_id', $this->id)->get();
         $plays = [];
