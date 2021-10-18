@@ -21,10 +21,15 @@ class AlbumFactory extends Factory
      */
     public function definition()
     {
+
+        $name = $this->faker->unique()->word();
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name)));
+
         return [
-            'name' => $this->faker->unique()->word(),
+            'name' => $name,
             'album_cover' => $this->faker->imageUrl(400,400),
             'subgenre_id' => rand(1, 10),
+            'slug' => $slug,
         ];
     }
 }

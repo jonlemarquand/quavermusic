@@ -21,6 +21,7 @@ class Artist extends Model
     protected $fillable = [
         'id',
         'name',
+        'slug',
     ];
 
     public $timestamps = false;

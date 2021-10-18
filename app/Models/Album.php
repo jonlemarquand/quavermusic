@@ -22,6 +22,7 @@ class Album extends Model
         'name',
         'album_cover',
         'subgenre_id',
+        'slug'
     ];
 
     public $timestamps = false;

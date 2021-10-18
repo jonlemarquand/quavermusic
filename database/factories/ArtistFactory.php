@@ -21,9 +21,14 @@ class ArtistFactory extends Factory
      */
     public function definition()
     {
+
+        $name = $this->faker->company();
+        $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name)));
+
         return [
             //
-            'name' => $this->faker->company(),
+            'name' => $name,
+            'slug' => $slug,
         ];
     }
 }
