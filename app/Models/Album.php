@@ -30,15 +30,15 @@ class Album extends Model
     /**
      * @return BelongsToMany
      */
-    public function artist(): BelongsToMany
+    public function artists(): BelongsToMany
     {
-        return $this->belongsToMany(Artist::class);
+        return $this->belongsToMany(Artist::class, 'album_artists');
     }
 
     /*
      * @return HasMany
      */
-    public function song(): HasMany
+    public function songs(): HasMany
     {
         return $this->hasMany(Song::class);
     }
@@ -46,5 +46,18 @@ class Album extends Model
     public function subgenre(): BelongsTo
     {
         return $this->belongsTo(Subgenre::class);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPlaysAttribute(): int
+    {
+        $songs = $this->songs()->where('album_id', $this->id)->get();
+        $plays = [];
+        forEach($songs as $song) {
+            array_push($plays, ...($song->plays()->get([])));
+        }
+        return count($plays);
     }
 }

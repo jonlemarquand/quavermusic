@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AlbumResource;
+use App\Http\Resources\ArtistResource;
 use App\Models\Album;
+use App\Models\Artist;
 use Illuminate\Http\Request;
 
 class AlbumController extends Controller
@@ -41,18 +44,18 @@ class AlbumController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Album  $album
-     * @return \Illuminate\Http\Response
+     * @param Album $album
+     * @return AlbumResource
      */
-    public function show(Album $album)
+    public function show($id)
     {
-        //
+        return new AlbumResource(Album::findOrFail($id));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Album  $album
+     * @param Album $album
      * @return \Illuminate\Http\Response
      */
     public function edit(Album $album)
@@ -64,7 +67,7 @@ class AlbumController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Album  $album
+     * @param Album $album
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Album $album)
@@ -75,7 +78,7 @@ class AlbumController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Album  $album
+     * @param Album $album
      * @return \Illuminate\Http\Response
      */
     public function destroy(Album $album)

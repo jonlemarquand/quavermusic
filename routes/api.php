@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\OverallController;
 use Illuminate\Http\Request;
@@ -22,6 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('artist')->group(function () {
     Route::get('/{id}', [ArtistController::class, 'show']);
+});
+
+Route::prefix('album')->group(function () {
+    Route::get('/{id}', [AlbumController::class, 'show']);
 });
 
 Route::prefix('overall')->group(function () {
