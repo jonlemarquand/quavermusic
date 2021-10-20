@@ -29,6 +29,7 @@ class ArtistFactory extends Factory
             //
             'name' => $name,
             'slug' => $slug,
+            'artist_image' => $this->faker->imageUrl(400,400),
         ];
     }
 }
