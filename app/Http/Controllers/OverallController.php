@@ -25,9 +25,9 @@ class OverallController extends Controller
         $songs = AllSongsResource::collection(Song::all())->sortByDesc('plays')->take(10);
 
         return [
-            'songs' => $songs,
             'artists' => $artists,
             'albums' => $albums,
+            'songs' => $songs,
         ];
     }
 }
