@@ -17,8 +17,10 @@ class CreateAlbumsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('album_cover');
-            $table->bigInteger('subgenre_id');
+            $table->unsignedBigInteger('subgenre_id');
             $table->string('slug')->unique();
+
+            $table->foreign('subgenre_id')->references('id')->on('subgenres');
         });
     }
 

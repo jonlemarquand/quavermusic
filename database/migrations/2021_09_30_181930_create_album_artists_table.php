@@ -15,8 +15,11 @@ class CreateAlbumArtistsTable extends Migration
     {
         Schema::create('album_artists', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('album_id');
-            $table->bigInteger('artist_id');
+            $table->unsignedBigInteger('album_id');
+            $table->unsignedBigInteger('artist_id');
+
+            $table->foreign('album_id')->references('id')->on('albums');
+            $table->foreign('artist_id')->references('id')->on('artists');
         });
     }
 

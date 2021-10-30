@@ -15,10 +15,13 @@ class CreateSongUsersTable extends Migration
     {
         Schema::create('song_users', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->bigInteger('song_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('song_id');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('song_id')->references('id')->on('songs');
         });
     }
 

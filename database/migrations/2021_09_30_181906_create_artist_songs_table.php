@@ -15,8 +15,11 @@ class CreateArtistSongsTable extends Migration
     {
         Schema::create('artist_songs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('song_id');
-            $table->bigInteger('artist_id');
+            $table->unsignedBigInteger('song_id');
+            $table->unsignedBigInteger('artist_id');
+
+            $table->foreign('song_id')->references('id')->on('songs');
+            $table->foreign('artist_id')->references('id')->on('artists');
         });
     }
 
