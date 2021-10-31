@@ -14,7 +14,7 @@ class AddArtistImageToArtistsTable extends Migration
     public function up()
     {
         Schema::table('artists', function (Blueprint $table) {
-            $table->string('artist_image');
+            $table->string('artist_image')->nullable();
         });
     }
 

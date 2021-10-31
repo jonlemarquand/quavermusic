@@ -19,9 +19,7 @@ class Artist extends Model
      * @var string[]
      */
     protected $fillable = [
-        'id',
         'name',
-        'slug',
     ];
 
     public $timestamps = false;
@@ -53,5 +51,10 @@ class Artist extends Model
             array_push($plays, ...($song->plays()->get([])));
         }
         return count($plays);
+    }
+
+    public function createSlug($name): string
+    {
+        return $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name)));
     }
 }

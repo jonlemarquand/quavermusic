@@ -32,3 +32,7 @@ Route::prefix('album')->group(function () {
 Route::prefix('overall')->group(function () {
    Route::get('/{period}', [OverallController::class, 'show']);
 });
+
+Route::prefix('admin')->group(function () {
+    Route::post('/create/artist', [ArtistController::class, 'store']);
+});

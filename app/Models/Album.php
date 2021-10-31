@@ -18,11 +18,9 @@ class Album extends Model
      * @var string[]
      */
     protected $fillable = [
-        'id',
         'name',
         'album_cover',
         'subgenre_id',
-        'slug'
     ];
 
     public $timestamps = false;
@@ -59,5 +57,12 @@ class Album extends Model
             array_push($plays, ...($song->plays()->get([])));
         }
         return count($plays);
+    }
+
+    public function createSlug($name): string
+    {
+        //TODO change regex to remove non characters from start
+
+        return $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $name)));
     }
 }
