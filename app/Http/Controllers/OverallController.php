@@ -12,22 +12,23 @@ use App\Models\Artist;
 use App\Models\Song;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Inertia\Inertia;
 
 class OverallController extends Controller
 {
     /*
      *
      */
-    public function show($period)
+    public function show()
     {
         $artists = AllArtistsResource::collection(Artist::all())->sortByDesc('plays')->take(6);
         $albums = AllAlbumsResource::collection(Album::all())->sortByDesc('plays')->take(6);
         $songs = AllSongsResource::collection(Song::all())->sortByDesc('plays')->take(10);
 
-        return [
+        return Inertia::render('Homepage', [
             'artists' => $artists,
             'albums' => $albums,
             'songs' => $songs,
-        ];
+        ]);
     }
 }

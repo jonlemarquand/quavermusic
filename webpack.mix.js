@@ -34,5 +34,6 @@ mix.js('resources/js/app.js', 'public/js')
             }
         }
     })
-    .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .vue(3)
+    .sass('resources/sass/app.scss', 'public/css')
+    .version();
